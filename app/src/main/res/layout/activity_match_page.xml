@@ -7,6 +7,32 @@
     tools:context=".MatchPage">
 
     <TextView
+        android:id="@+id/home_team_name"
+        android:layout_width="92dp"
+        android:layout_height="40dp"
+        android:text="Washington Uizzards"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/home_team_score"
+        app:layout_constraintEnd_toEndOf="@+id/home_team_logo"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toStartOf="@+id/home_team_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.206" />
+
+    <TextView
+        android:id="@+id/visitor_team_name"
+        android:layout_width="92dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="Washington Uizzards"
+        app:layout_constraintBottom_toTopOf="@+id/visitor_team_score"
+        app:layout_constraintEnd_toEndOf="@+id/visitor_team_logo"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/visitor_team_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
@@ -28,7 +54,7 @@
         app:layout_constraintHorizontal_bias="0.178"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintVertical_bias="0.118" />
 
     <ImageView
         android:id="@+id/visitor_team_logo"
@@ -37,10 +63,10 @@
         android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintHorizontal_bias="0.784"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintVertical_bias="0.113" />
 
     <TextView
         android:id="@+id/home_team_score"
@@ -76,10 +102,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/visitor_team_logo"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/home_team_logo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.223" />
+        app:layout_constraintVertical_bias="0.292" />
 
     <TextView
         android:id="@+id/date"
@@ -89,8 +115,8 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/visitor_team_logo"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.361"
         app:layout_constraintStart_toEndOf="@+id/home_team_logo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.339" />
 </androidx.constraintlayout.widget.ConstraintLayout>

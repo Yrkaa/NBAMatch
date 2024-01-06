@@ -2,8 +2,10 @@ package com.example.nbamatch;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,12 +20,17 @@ import java.util.ArrayList;
 
 public class LoadMatchesList extends Thread {
 
+    JSONArray data;
+
     Activity a;
     ListView list;
+    ProgressBar progressBar;
 
-    public LoadMatchesList(Activity a, ListView list){
+
+    public LoadMatchesList(Activity a, ListView list, ProgressBar progressBar){
         this.a = a;
         this.list = list;
+        this.progressBar = progressBar;
     }
 
     @Override
@@ -44,7 +51,8 @@ public class LoadMatchesList extends Thread {
 
                 //Преобразуем данные с сервера в JSONObject
                 JSONObject json = new JSONObject(reader.readLine());
-                JSONArray data = json.getJSONArray("data");
+                data = json.getJSONArray("data");
+
 
                 //Заполняем список матчей
                 a.runOnUiThread(new Runnable() {
@@ -62,6 +70,9 @@ public class LoadMatchesList extends Thread {
                             }
                         }
 
+                        //Скрываем прогресс бар, когда все загрузили
+                        progressBar.setVisibility(View.INVISIBLE);
+
                         //Создаем адаптор и заполняем список
                         ArrayAdapter adapter = new ArrayAdapter(a, android.R.layout.simple_list_item_1, matchesMassive);
                         list.setAdapter(adapter);
@@ -75,5 +86,14 @@ public class LoadMatchesList extends Thread {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public int getId(int l){
+        try {
+            int id = data.getJSONObject(l).getInt("id");
+            return id;
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

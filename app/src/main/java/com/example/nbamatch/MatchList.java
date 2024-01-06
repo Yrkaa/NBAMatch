@@ -17,5 +17,9 @@ public class MatchList extends AppCompatActivity {
 
         //Инициализация переменных для эл. разметки
         matchList = findViewById(R.id.match_list);
+
+        //Запускаем поток для заполнения списка матчей
+        LoadMatchesList loadMatchesList = new LoadMatchesList(MatchList.this, matchList);
+        loadMatchesList.start();
     }
 }

@@ -2,6 +2,7 @@ package com.example.nbamatch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,6 +33,9 @@ public class MatchList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 int id = (int) loadMatchesList.getId((int) l);
+                Intent toMatchPage = new Intent(MatchList.this, MatchPage.class);
+                toMatchPage.putExtra("id", id);
+                startActivity(toMatchPage);
             }
         });
 

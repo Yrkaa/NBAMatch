@@ -36,7 +36,7 @@ public class MatchPage extends AppCompatActivity {
         //Запускаем поток для получения данных о матче
         int id = getIntent().getIntExtra("id", 1);
         LoadMatchData loadMatchData = new LoadMatchData(id, homeTeamName, visitorTeamName,
-                homeTeamScore, visitorTeamScore, status, date, progressBar, tire, MatchPage.this);
+                homeTeamScore, visitorTeamScore, status, date, progressBar, tire, homeTeamLogo, visitorTeamLogo, MatchPage.this);
         loadMatchData.start();
 
 

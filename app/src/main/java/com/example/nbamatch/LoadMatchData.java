@@ -2,8 +2,11 @@ package com.example.nbamatch;
 
 import android.app.Activity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,7 +26,8 @@ public class LoadMatchData extends Thread{
     public LoadMatchData(int id, TextView homeTeamNameTv, TextView visitorTeamNameTv,
                          TextView homeTeamScoreTv, TextView visitorTeamScoreTv,
                          TextView statusTv, TextView dateTv, ProgressBar progressBar,
-                         TextView tire, Activity activity){
+                         TextView tire, ImageView homeTeamLogo,
+                         ImageView visitorTeamLogo, Activity activity){
         this.id = id;
         this.homeTeamNameTv = homeTeamNameTv;
         this.visitorTeamNameTv = visitorTeamNameTv;
@@ -33,6 +37,8 @@ public class LoadMatchData extends Thread{
         this.dateTv = dateTv;
         this.activity = activity;
         this.progressBar = progressBar;
+        this.homeTeamLogo = homeTeamLogo;
+        this.visitorTeamLogo = visitorTeamLogo;
         this.tire = tire;
     }
 
@@ -45,6 +51,7 @@ public class LoadMatchData extends Thread{
             homeTeamScoreTv, visitorTeamScoreTv, statusTv, dateTv, tire;
     ProgressBar progressBar;
     Activity activity;
+    ImageView homeTeamLogo, visitorTeamLogo;
 
     @Override
     public void run() {
@@ -79,10 +86,6 @@ public class LoadMatchData extends Thread{
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //Скрываем строку загрузки, когда все загружено, показываем тире
-                progressBar.setVisibility(View.INVISIBLE);
-                tire.setText("-");
-
                 //Переносим информацию
                 homeTeamNameTv.setText(homeTeamName);
                 visitorTeamNameTv.setText(visitorTeamName);
@@ -90,6 +93,20 @@ public class LoadMatchData extends Thread{
                 visitorTeamScoreTv.setText(String.valueOf(visitorTeamScore));
                 statusTv.setText(status);
                 dateTv.setText(date);
+
+                //Подгружаем логотипы команд
+                if(homeTeamName.split(" ").length == 2)
+                    Picasso.get().load("https://loodibee.com/wp-content/uploads/nba-"+homeTeamName.split(" ")[0].toLowerCase()+"-"+homeTeamName.split(" ")[1].toLowerCase()+"-logo.png").into(homeTeamLogo);
+                if(homeTeamName.split(" ").length == 3)
+                    Picasso.get().load("https://loodibee.com/wp-content/uploads/nba-"+homeTeamName.split(" ")[0].toLowerCase()+"-"+homeTeamName.split(" ")[1].toLowerCase()+"-"+homeTeamName.split(" ")[2].toLowerCase()+"-logo.png").into(homeTeamLogo);
+                if(visitorTeamName.split(" ").length == 2)
+                    Picasso.get().load("https://loodibee.com/wp-content/uploads/nba-"+visitorTeamName.split(" ")[0].toLowerCase()+"-"+visitorTeamName.split(" ")[1].toLowerCase()+"-logo.png").into(visitorTeamLogo);
+                if(visitorTeamName.split(" ").length == 3)
+                    Picasso.get().load("https://loodibee.com/wp-content/uploads/nba-"+visitorTeamName.split(" ")[0].toLowerCase()+"-"+visitorTeamName.split(" ")[1].toLowerCase()+"-"+visitorTeamName.split(" ")[2].toLowerCase()+"-logo.png").into(visitorTeamLogo);
+
+                //Скрываем строку загрузки, когда все загружено, показываем тире
+                progressBar.setVisibility(View.INVISIBLE);
+                tire.setText("-");
             }
         });
     }

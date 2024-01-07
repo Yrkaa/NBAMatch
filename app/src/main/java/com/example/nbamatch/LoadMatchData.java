@@ -22,7 +22,8 @@ public class LoadMatchData extends Thread{
     //Конструктор для получения id матча и эл. разметки
     public LoadMatchData(int id, TextView homeTeamNameTv, TextView visitorTeamNameTv,
                          TextView homeTeamScoreTv, TextView visitorTeamScoreTv,
-                         TextView statusTv, TextView dateTv, ProgressBar progressBar,Activity activity){
+                         TextView statusTv, TextView dateTv, ProgressBar progressBar,
+                         TextView tire, Activity activity){
         this.id = id;
         this.homeTeamNameTv = homeTeamNameTv;
         this.visitorTeamNameTv = visitorTeamNameTv;
@@ -32,6 +33,7 @@ public class LoadMatchData extends Thread{
         this.dateTv = dateTv;
         this.activity = activity;
         this.progressBar = progressBar;
+        this.tire = tire;
     }
 
     //Поля, куда запишутся данные об игре
@@ -40,7 +42,7 @@ public class LoadMatchData extends Thread{
 
     //Поля с эл. разметки
     TextView homeTeamNameTv, visitorTeamNameTv,
-            homeTeamScoreTv, visitorTeamScoreTv, statusTv, dateTv;
+            homeTeamScoreTv, visitorTeamScoreTv, statusTv, dateTv, tire;
     ProgressBar progressBar;
     Activity activity;
 
@@ -77,8 +79,9 @@ public class LoadMatchData extends Thread{
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //Скрываем строку загрузки, когда все загружено
+                //Скрываем строку загрузки, когда все загружено, показываем тире
                 progressBar.setVisibility(View.INVISIBLE);
+                tire.setText("-");
 
                 //Переносим информацию
                 homeTeamNameTv.setText(homeTeamName);

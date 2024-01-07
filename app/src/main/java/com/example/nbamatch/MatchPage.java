@@ -12,7 +12,7 @@ public class MatchPage extends AppCompatActivity {
 
     //Создание переменных для эл. разметки
     TextView homeTeamName, visitorTeamName,
-    homeTeamScore, visitorTeamScore, status, date;
+    homeTeamScore, visitorTeamScore, status, date, tire;
     ImageView homeTeamLogo, visitorTeamLogo;
     ProgressBar progressBar;
 
@@ -31,12 +31,16 @@ public class MatchPage extends AppCompatActivity {
         homeTeamLogo = findViewById(R.id.home_team_logo);
         visitorTeamLogo = findViewById(R.id.visitor_team_logo);
         progressBar = findViewById(R.id.progressBar2);
+        tire = findViewById(R.id.tire);
 
         //Запускаем поток для получения данных о матче
         int id = getIntent().getIntExtra("id", 1);
         LoadMatchData loadMatchData = new LoadMatchData(id, homeTeamName, visitorTeamName,
-                homeTeamScore, visitorTeamScore, status, date, progressBar, MatchPage.this);
+                homeTeamScore, visitorTeamScore, status, date, progressBar, tire, MatchPage.this);
         loadMatchData.start();
+
+
+
 
     }
 }

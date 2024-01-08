@@ -3,6 +3,8 @@
     <style name="Base.Theme.NBAMatch" parent="Theme.Material3.DayNight.NoActionBar">
        <item name="android:windowBackground">#4899E4</item>
         <item name="colorPrimaryDark">#D6382C</item>
+        <item name="android:textViewStyle">@style/StyleTextView</item>
+        <item name="android:navigationBarColor">#D6382C</item>
     </style>
 
     <style name="Theme.NBAMatch" parent="Base.Theme.NBAMatch" />

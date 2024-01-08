@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="StyleMatchList" parent="@android:style/Widget.ListView">
+        <item name="fastScrollEnabled">true</item>
+
+    </style>
+
+    <style name="StyleTextView" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+</resources>

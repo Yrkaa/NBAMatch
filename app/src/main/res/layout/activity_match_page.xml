@@ -8,10 +8,10 @@
 
     <TextView
         android:id="@+id/home_team_name"
-        android:layout_width="92dp"
-        android:layout_height="40dp"
-        android:text=""
+        android:layout_width="125dp"
+        android:layout_height="71dp"
         android:gravity="center"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/home_team_score"
         app:layout_constraintEnd_toEndOf="@+id/home_team_logo"
         app:layout_constraintHorizontal_bias="0.409"
@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/visitor_team_name"
-        android:layout_width="92dp"
-        android:layout_height="40dp"
+        android:layout_width="125dp"
+        android:layout_height="71dp"
         android:gravity="center"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/visitor_team_score"
@@ -37,93 +37,92 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="100dp"
+        android:textSize="150dp"
         app:layout_constraintBottom_toBottomOf="@+id/home_team_logo"
         app:layout_constraintEnd_toStartOf="@+id/visitor_team_logo"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toEndOf="@+id/home_team_logo"
         app:layout_constraintTop_toTopOf="@+id/home_team_logo"
-        app:layout_constraintVertical_bias="0.011" />
+        app:layout_constraintVertical_bias="0.583" />
 
     <ImageView
         android:id="@+id/home_team_logo"
-        android:layout_width="300px"
-        android:layout_height="300px"
-        android:src="@mipmap/ic_launcher"
+        android:layout_width="400px"
+        android:layout_height="400px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.184" />
 
     <ImageView
         android:id="@+id/visitor_team_logo"
-        android:layout_width="300px"
-        android:layout_height="300px"
-        android:src="@mipmap/ic_launcher"
+        android:layout_width="400px"
+        android:layout_height="400px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintVertical_bias="0.184" />
 
     <TextView
         android:id="@+id/home_team_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        android:textSize="30dp"
+        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/home_team_logo"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/home_team_logo"
         app:layout_constraintTop_toTopOf="@+id/home_team_logo"
-        app:layout_constraintVertical_bias="0.182" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <TextView
         android:id="@+id/visitor_team_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        android:textSize="30dp"
+        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/visitor_team_logo"
-        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@+id/visitor_team_logo"
         app:layout_constraintTop_toTopOf="@+id/visitor_team_logo"
-        app:layout_constraintVertical_bias="0.181" />
+        app:layout_constraintVertical_bias="0.284" />
 
     <TextView
         android:id="@+id/status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="20dp"
+        android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/visitor_team_logo"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toEndOf="@+id/home_team_logo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
+        app:layout_constraintVertical_bias="0.489" />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="20dp"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/visitor_team_logo"
-        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toEndOf="@+id/home_team_logo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
+        app:layout_constraintVertical_bias="0.574" />
 
     <ProgressBar
         android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyle"
+        android:indeterminateTint="#FFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -131,5 +130,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.241" />
 </androidx.constraintlayout.widget.ConstraintLayout>
